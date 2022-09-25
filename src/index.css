@@ -1,101 +1,72 @@
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  max-width: 100%;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-:root {
-  --light: #d0d1d3;
-  --dark: #090229;
-  --green: #c7d40a;
 }
 
-body {
-  font-family: Poppins;
-  background: var(--dark);
-  line-height: 26px;
-  margin: 0;
-}
-
-h1 {
-  color: var(--green);
-}
-
-.App {
-  height: 75vh;
-  margin-top: 15vh;
-}
-
-form {
-  margin-top: 20px;
-  background: var(--dark);
-}
-
-.formRow {
-  margin: 10px 0 20px 0;
-}
-
-.formInput {
-  padding: 15px 10px;
-  background-color: var(--dark);
-  box-shadow: 0 0 0 2px var(--green);
+.row input {
+  
+  box-sizing: border-box;
   border: none;
-  color: var(--green);
+  font-size: 1.3rem;
+  padding-left: 1.5rem;
+  padding-bottom: 1rem;
+  box-shadow: inset 0px -3px 0px 0px rgba(187, 187, 187, 0.2);
+  transition: box-shadow 0.2s ease-in;
 }
 
-.formInput:focus {
-  background-color: var(--dark);
+.row input:focus {
+  box-shadow: inset 0px -3px 0px 0px rgba(34, 193, 195, 0.7);
   outline: none;
-  box-shadow: 0 0 0 2px var(--green);
-  color: var(--light);
-}
-
-.formInput::placeholder {
-  color: var(--green);
-  opacity: 1;
-}
-
-.formInput:focus::placeholder {
-  color: var(--light);
-  opacity: 1;
-}
-
-.errorMessage {
-  color: #f45532;
-  font-size: 14px;
-  margin: 0;
-  padding: 0;
-}
-
-#notifyToast {
+  background: black;
   color: #fff;
-  border-radius: 6px;
-  width: 200px;
-  margin-left: 75px;
-  background-color: var(--green);
 }
 
-.submit-btn {
-  background-color: var(--dark);
-  color: var(--green) !important;
-  padding: 15px 50px;
-  border: 2px solid var(--green);
-  border-radius: 10px;
-  margin-bottom: 25px;
+.row input::-webkit-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.25s ease-out;
 }
 
-.submit-btn:hover {
-  background-color: var(--green);
-  color: var(--dark) !important;
-  border: 2px solid var(--green);
+.row input:hover::-webkit-input-placeholder,
+.row input:focus::-webkit-input-placeholder {
+  opacity: 0;
 }
 
-.submit-btn:disabled:hover {
-  background-color: var(--dark);
-  color: var(--green) !important;
-  cursor: wait;
+.row label {
+  align-self: start;
+  
+  padding-bottom: 1rem;
+  color:aliceblue;
+  font-size: 1.5rem;
 }
 
-@media (max-width: 768px) {
-  .submit-message {
-    width: 125px;
-    margin-left: 200px;
-  }
+.other {
+  margin-top: -20rem;
+}
+
+.row .submit-btn {
+  border-radius: 25px;
+  width: 80%;
+  height: 40px;
+  font-size: 1.3rem;
+  color: white;
+  font-weight: 700;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(90deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+  border: 0px;
+  cursor: pointer;
+  transition: opacity 0.25s ease-out;
+}
+
+.row button:hover {
+  opacity: 0.8;
+}
+
+h1{
+  color:yellow;
+  font-size: 2.5rem;
+  font-weight: 400;
 }

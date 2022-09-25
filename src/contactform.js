@@ -66,20 +66,20 @@ const ContactForm = () => {
     return (
         <div className='ContactForm'>
             <Container>
-                <h1>Contact Form !</h1>
-                <div className='container'>
+
+                <div className='container bod'>
                     <div className='row'>
                         <div className='col-12 text-center'>
+                            <h1>Contact Form !</h1>
                             <div className='contactForm'>
                                 <form id='contact-form' onSubmit={handleSubmit(onSubmit)} noValidate>
                                     {/* Row 1 of form */}
                                     <div className='row formRow'>
                                         <div className='col-6'>
-                                            <br />
-                                            <input
-                                                type='text'
-                                                name='name'
-                                                {...register('name', {
+
+                                            <div className="row">
+                                                <label>Enter your Name :</label>
+                                                <input type="text" placeholder="Hospital Name" name="name" className="formin"{...register('name', {
                                                     required: {
                                                         value: true,
                                                         message: 'Please enter your name'
@@ -88,27 +88,24 @@ const ContactForm = () => {
                                                         value: 30,
                                                         message: 'Please use 30 characters or less'
                                                     }
-                                                })}
-                                                className='form-control formInput'
-                                                placeholder='Name'
-                                            ></input>
-                                            <br />
+                                                })} />
+                                            </div>
+
+
                                             {errors.name && <span className='errorMessage'>{errors.name.message}</span>}
                                         </div>
-                                        <br />
+
                                         <div className='col-6'>
-                                            <input
-                                                type='email'
-                                                name='email'
-                                                {...register('email', {
+                                            <div className="row">
+                                                <label>Enter Email Address :</label>
+                                                <input type="email" placeholder="Email address" name="email" className="formin"{...register('email', {
                                                     required: true,
                                                     pattern:
                                                         /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-                                                })}
-                                                className='form-control formInput'
-                                                placeholder='Email address'
-                                            ></input>
-                                            <br />
+                                                })} />
+                                            </div>
+
+
                                             {errors.email && (
                                                 <span className='errorMessage'>Please enter a valid email address</span>
                                             )}
@@ -117,10 +114,9 @@ const ContactForm = () => {
                                     {/* Row 2 of form */}
                                     <div className='row formRow'>
                                         <div className='col'>
-                                            <input
-                                                type='text'
-                                                name='subject'
-                                                {...register('subject', {
+                                            <div className="row">
+                                                <label>Enter Subject :</label>
+                                                <input type="text" placeholder="Subject" name="subject" className="formin"{...register('subject', {
                                                     required: {
                                                         value: true,
                                                         message: 'Please enter a subject'
@@ -129,11 +125,10 @@ const ContactForm = () => {
                                                         value: 75,
                                                         message: 'Subject cannot exceed 75 characters'
                                                     }
-                                                })}
-                                                className='form-control formInput'
-                                                placeholder='Subject'
-                                            ></input>
-                                            <br />
+                                                })} />
+                                            </div>
+
+
                                             {errors.subject && (
                                                 <span className='errorMessage'>{errors.subject.message}</span>
                                             )}
@@ -142,23 +137,26 @@ const ContactForm = () => {
                                     {/* Row 3 of form */}
                                     <div className='row formRow'>
                                         <div className='col'>
-                                            <textarea
-                                                rows={3}
-                                                name='message'
-                                                {...register('message', {
+                                            <div className="row">
+                                                <label>Enter Message :</label>
+                                                <input type="text" placeholder="Message" name="message" className="formin"  {...register('message', {
                                                     required: true
-                                                })}
-                                                className='form-control formInput'
-                                                placeholder='Message'
-                                            ></textarea>
-                                            <br />
+                                                })} />
+                                            </div>
+
+
+
                                             {errors.message && <span className='errorMessage'>Please enter a message</span>}
                                         </div>
                                     </div>
                                     <br />
+                                    <br />
+
                                     <button className='submit-btn' disabled={disabled} type='submit'>
-                                        Submit
+                                        Submit !
                                     </button>
+                                    <br />
+                                    <br />
                                 </form>
                             </div>
                             <ToastContainer />
