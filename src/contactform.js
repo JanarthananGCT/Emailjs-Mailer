@@ -79,7 +79,7 @@ const ContactForm = () => {
 
                                             <div className="row">
                                                 <label>Enter your Name :</label>
-                                                <input type="text" placeholder="Hospital Name" name="name" className="formin"{...register('name', {
+                                                <input type="text" placeholder="Enter Your Name" name="name" className="formin"{...register('name', {
                                                     required: {
                                                         value: true,
                                                         message: 'Please enter your name'
